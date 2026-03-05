@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Agent</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #0a0a0a; color: #e0e0e0;
+            display: flex; justify-content: center; align-items: center;
+            min-height: 100vh;
+        }
+        .container { max-width: 480px; width: 100%; padding: 24px; }
+        h1 { font-size: 20px; margin-bottom: 24px; color: #fff; text-align: center; }
+
+        .status-bar {
+            display: flex; align-items: center; gap: 8px;
+            padding: 12px 16px; background: #1a1a1a; border-radius: 8px;
+            margin-bottom: 16px;
+        }
+        .status-dot {
+            width: 10px; height: 10px; border-radius: 50%;
+            background: #555; transition: background 0.3s;
+        }
+        .status-dot.connected { background: #4a9; }
+        .status-dot.listening { background: #4c4; animation: pulse 1s infinite; }
+        .status-dot.processing { background: #ca4; animation: pulse 0.5s infinite; }
+        .status-dot.speaking { background: #c44; }
+        @keyframes pulse { 50% { opacity: 0.5; } }
+        .status-text { font-size: 14px; color: #999; }
+
+        .connect-btn {
+            width: 100%; padding: 14px; font-size: 16px; font-weight: 600;
+            background: #2563eb; color: #fff; border: none; border-radius: 8px;
+            cursor: pointer; transition: background 0.2s; margin-bottom: 16px;
+        }
+        .connect-btn:hover { background: #1d4ed8; }
+        .connect-btn.active { background: #dc2626; }
+        .connect-btn.active:hover { background: #b91c1c; }
+
+        canvas {
+            width: 100%; height: 80px; background: #111;
+            border-radius: 8px; margin-bottom: 16px;
+        }
+
+        .transcript {
+            background: #111; border-radius: 8px; padding: 16px;
+            min-height: 200px; max-height: 400px; overflow-y: auto;
+            font-size: 14px; line-height: 1.6;
+        }
+        .transcript-entry { margin-bottom: 12px; }
+        .transcript-entry.user .label { color: #4a9; }
+        .transcript-entry.agent .label { color: #c44; }
+        .label { font-size: 12px; font-weight: 600; margin-bottom: 2px; }
+        .text { color: #ccc; }
+        .placeholder { color: #555; font-style: italic; text-align: center; padding: 40px 0; }
+
+        .settings {
+            margin-top: 16px; display: flex; gap: 8px; align-items: center;
+        }
+        .settings input {
+            flex: 1; padding: 8px 12px; background: #1a1a1a; border: 1px solid #333;
+            border-radius: 6px; color: #e0e0e0; font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Voice Agent</h1>
+
+        <div class="status-bar">
+            <div class="status-dot" id="statusDot"></div>
+            <span class="status-text" id="statusText">Disconnected</span>
+        </div>
+
+        <button class="connect-btn" id="connectBtn" onclick="toggleConnection()">Connect</button>
+
+        <canvas id="visualizer"></canvas>
+
+        <div class="transcript" id="transcript">
+            <div class="placeholder">Connect and speak to begin</div>
+        </div>
+
+        <div class="settings">
+            <input type="text" id="serverUrl" value="ws://localhost:8888/ws/audio" placeholder="Server URL">
+        </div>
+    </div>
+
+    <script src="audio-capture-worklet.js" type="module"></script>
+    <script src="audio-playback-worklet.js" type="module"></script>
+    <script src="app.js"></script>
+</body>
+</html>

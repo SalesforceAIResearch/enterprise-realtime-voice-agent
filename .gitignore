@@ -1,0 +1,56 @@
+# Credentials
+credentials.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Output files
+*.wav
+*.mp3
+*.opus
+output/
+
+# Model weights (use HF cache instead)
+*.bin
+*.safetensors
+*.gguf
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Claude
+.claude/
+
+# LaTeX build artifacts
+Tech-Report/*.aux
+Tech-Report/*.log
+Tech-Report/*.bbl
+Tech-Report/*.blg
+Tech-Report/*.out
+Tech-Report/*.bcf
+Tech-Report/*.run.xml
+Tech-Report/*.synctex.gz
+Tech-Report/main.pdf
+
+# Research notes (not for release)
+RESEARCH_RESOURCES.md
+plan.md
+

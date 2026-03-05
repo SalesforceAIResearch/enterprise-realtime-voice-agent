@@ -1,0 +1,27 @@
+# LLM serving
+vllm
+openai                      # Client for vLLM's OpenAI-compatible API
+
+# STT
+deepgram-sdk
+
+# TTS
+elevenlabs
+
+# VAD
+silero-vad
+torch>=2.1.0
+
+# Server
+fastapi
+uvicorn[standard]
+websockets
+
+# Audio
+numpy
+soundfile
+scipy
+
+# Utilities
+python-dotenv
+huggingface_hub
