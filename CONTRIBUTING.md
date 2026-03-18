@@ -1,4 +1,4 @@
-# Contributing Guide For enterprise-realtime-voice-agent
+# Contributing Guide For Enterprise-Realtime-Voice-Agent
 
 This page lists the operational governance model of this project, as well as the recommendations and requirements for how to best contribute to LoCoBench-Agent. We strive to obey these as best as possible. As always, thanks for contributing – we hope these guidelines make it easier and shed some light on our approach and processes.
 
@@ -6,7 +6,7 @@ This page lists the operational governance model of this project, as well as the
 
 ## Salesforce Sponsored
 
-The intent and goal of open sourcing LoCoBench-Agent is to increase the contributor and user base. However, only Salesforce employees will be given `admin` rights and will be the final arbiters of what contributions are accepted or not.
+The intent and goal of open sourcing Enterprise-Realtime-Voice-Agent is to increase the contributor and user base. However, only Salesforce employees will be given `admin` rights and will be the final arbiters of what contributions are accepted or not.
 
 # Getting started
 
