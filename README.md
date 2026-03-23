@@ -143,9 +143,10 @@ The code auto-detects vLLM on `localhost:8000` and uses it instead of the OpenAI
 ## Citation
 
 ```bibtex
-@inproceedings{Qiu2026BuildingER,
+@article{qiu2026building,
   title={Building Enterprise Realtime Voice Agents from Scratch: A Technical Tutorial},
-  author={Jielin Qiu and Zixiang Chen and Liangwei Yang and Ming Zhu and Zhiwei Liu and Juntao Tan and Wenting Zhao and Rithesh Murthy and Roshan Ram and Akshara Prabhakar and Shelby Heinecke and Caiming Xiong and Silvio Savarese and Huan Wang},
+  author={Qiu, Jielin and Chen, Zixiang and Yang, Liangwei and Zhu, Ming and Liu, Zhiwei and Tan, Juntao and Zhao, Wenting and Murthy, Rithesh and Ram, Roshan and Prabhakar, Akshara and others},
+  journal={arXiv preprint arXiv:2603.05413},
   year={2026}
 }
 ```
